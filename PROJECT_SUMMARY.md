@@ -172,45 +172,75 @@ Test coverage includes:
 
 Comprehensive documentation available in multiple files:
 
-1. **QUICKSTART.md** - Get started in 5 minutes
-2. **README.md** - Full documentation with examples
-3. **CHANGELOG.md** - Version history
-4. **LICENSE** - MIT License details
+1. **[QUICK_SETUP_COPILOT.md](QUICK_SETUP_COPILOT.md)** - 🚀 **START HERE** - Use agent immediately + Copilot integration
+2. **[DEPLOYMENT.md](DEPLOYMENT.md)** - Complete guide to GitHub Copilot Extension setup
+3. **[QUICKSTART.md](QUICKSTART.md)** - Get started in 5 minutes
+4. **[README.md](README.md)** - Full documentation with examples
+5. **[CHANGELOG.md](CHANGELOG.md)** - Version history
+6. **[LICENSE](LICENSE)** - MIT License details
 
 ## 🔄 Next Steps
 
-### To Use the Agent:
+### ✅ You Asked: How to Get Agent in Copilot Dropdown?
 
-1. **Test with your own HTML files:**
+**See these new guides:**
+
+- 📘 **[QUICK_SETUP_COPILOT.md](QUICK_SETUP_COPILOT.md)** - Start using NOW (2 minutes!)
+- 📗 **[DEPLOYMENT.md](DEPLOYMENT.md)** - Full GitHub Copilot Extension setup
+
+**Quick Answer:**
+
+- **Use immediately** → Set up VS Code Task (2 min) - see QUICK_SETUP_COPILOT.md
+- **Full integration** → Deploy as GitHub App (2-4 hrs) - see DEPLOYMENT.md
+
+### To Use the Agent Right Now:
+
+1. **Fastest: Create VS Code Task** (in your HTML project):
+
+   ```json
+   // .vscode/tasks.json
+   {
+     "version": "2.0.0",
+     "tasks": [
+       {
+         "label": "Convert to Title Case",
+         "type": "shell",
+         "command": "python",
+         "args": [
+           "c:/E/Production/Update/title-case/agent/title_case_agent.py",
+           "${file}"
+         ]
+       }
+     ]
+   }
+   ```
+
+   Then: Ctrl+Shift+P → "Run Task" → "Convert to Title Case"
+
+2. **Direct command line:**
 
    ```bash
    python agent\title_case_agent.py your_file.html
    ```
 
-2. **Integrate into your workflow:**
-   - Use as a command-line tool
-   - Import as a Python module
-   - Integrate with build scripts
+3. **Python API:**
+   ```python
+   from agent.title_case_agent import TitleCaseConverter
+   converter = TitleCaseConverter()
+   converter.convert_html_file("input.html", "output.html")
+   ```
 
-3. **Customize if needed:**
-   - Edit `agent/title_case_agent.py` to adjust MINOR_WORDS list
-   - Add custom logic for your specific use cases
+### To Get in GitHub Copilot Dropdown Menu:
 
-### To Push to GitHub:
+**Requirements:**
 
-```bash
-# Check status
-git status
+1. ✅ Code committed to GitHub (Done!)
+2. ⏳ Create web server to host agent
+3. ⏳ Create GitHub App with Copilot Extension
+4. ⏳ Deploy and configure
+5. ⏳ Install to your account
 
-# Add all files
-git add .
-
-# Commit with message
-git commit -m "Initial commit: Title Case Agent v1.0.0"
-
-# Push to GitHub
-git push origin main
-```
+**See [DEPLOYMENT.md](DEPLOYMENT.md) for complete step-by-step instructions.**
 
 ## 🎯 Important Notes
 
