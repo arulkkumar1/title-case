@@ -1,0 +1,35 @@
+{
+  "name": "title-case",
+  "version": "1.0.0",
+  "description": "Converts HTML heading elements (title, h1-h5) to title case while preserving attributes and sub-elements",
+  "author": "arulkkumar1",
+  "license": "MIT",
+  "capabilities": {
+    "supportedFileTypes": [
+      "html",
+      "htm"
+    ],
+    "commands": [
+      {
+        "name": "convert-to-title-case",
+        "description": "Convert all heading elements to title case",
+        "parameters": {
+          "file": {
+            "type": "string",
+            "description": "Path to HTML file to process",
+            "required": true
+          }
+        }
+      }
+    ]
+  },
+  "entrypoint": "agent/title_case_agent.py",
+  "runtime": "python",
+  "dependencies": {
+    "python": ">=3.8",
+    "packages": [
+      "beautifulsoup4>=4.9.0",
+      "lxml>=4.6.0"
+    ]
+  }
+}
