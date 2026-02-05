@@ -1,0 +1,38 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "msbuild",
+      "args": [
+        
+        "/property:GenerateFullPaths=true",
+        "/t:build",
+        
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "group": "build",
+      "presentation": {
+        
+        "reveal": "silent"
+      },
+      
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Convert Headings to Title Case",
+      "type": "shell",
+      "command": "C:/E/Production/Update/title-case/.venv/Scripts/python.exe",
+      "args": [
+        "c:/E/Production/Update/title-case/agent/title_case_agent.py",
+        "${file}"
+      ],
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
